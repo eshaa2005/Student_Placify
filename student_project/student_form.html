@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            max-width: 450px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            color: #c2185b;
+            margin-bottom: 20px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #f48fb1;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+        input:focus, select:focus {
+            border-color: #c2185b;
+            outline: none;
+        }
+        button {
+            background-color: #c2185b;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #880e4f;
+        }
+        .cgpa-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .cgpa-container input {
+            width: 48%;
+        }
+        #offerLetter { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Record Form</h2>
+        <form action="submit_student.php" method="POST" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Enter your Name" required>
+            <input type="text" name="rollno" placeholder="Enter your Roll No" required>
+            <input type="email" name="email" placeholder="Enter your Email" required>
+
+            <label>Semester-wise CGPA</label>
+            <div class="cgpa-container"><input type="number" step="0.01" name="sem1" placeholder="Semester 1 CGPA" required><input type="number" step="0.01" name="sem2" placeholder="Semester 2 CGPA" required></div>
+            <div class="cgpa-container"><input type="number" step="0.01" name="sem3" placeholder="Semester 3 CGPA" required><input type="number" step="0.01" name="sem4" placeholder="Semester 4 CGPA" required></div>
+            <div class="cgpa-container"><input type="number" step="0.01" name="sem5" placeholder="Semester 5 CGPA" required><input type="number" step="0.01" name="sem6" placeholder="Semester 6 CGPA" required></div>
+            <div class="cgpa-container"><input type="number" step="0.01" name="sem7" placeholder="Semester 7 CGPA" required><input type="number" step="0.01" name="sem8" placeholder="Semester 8 CGPA" required></div>
+            
+            <select name="status" id="status" required>
+                <option value="">Select Current Status</option>
+                <option value="Already Placed">Already Placed</option>
+                <option value="Higher Study">Higher Study</option>
+                <option value="Sitting for Placement">Sitting for Placement</option>
+            </select>
+
+            <input type="file" name="offerLetter" id="offerLetter" accept=".pdf,.doc,.docx">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('status').addEventListener('change', function() {
+            const offerLetter = document.getElementById('offerLetter');
+            if (this.value === 'Already Placed') {
+                offerLetter.style.display = 'block';
+                offerLetter.required = true;
+            } else {
+                offerLetter.style.display = 'none';
+                offerLetter.required = false;
+            }
+        });
+    </script>
+</body>
+</html>

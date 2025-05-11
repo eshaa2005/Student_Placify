@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Student Records</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url('https://source.unsplash.com/1600x900/?students,college') no-repeat center center/cover;
+            color: white;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #ffebee;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 20px;
+            color: #fce4ec;
+            margin-bottom: 20px;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background: linear-gradient(45deg, #c2185b, #880e4f);
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: linear-gradient(45deg, #d81b60, #9c0f53);
+            transform: translateY(-3px);
+        }
+        .logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        .register {
+            margin-top: 20px;
+            color: #fce4ec;
+        }
+        .register a {
+            color: #ff80ab;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .register a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="Student Logo" class="logo">
+        <h1>--------Welcome to StudentPlacify-------</h1>
+        <p>Login to access your records or sign up if you're new.</p>
+        
+        <div class="btn-container">
+            <a href="login.html" class="btn">Login</a>
+            <!-- <a href="signup.html" class="btn" style="background: linear-gradient(45deg, #1976D2, #0D47A1);">Sign Up</a> -->
+        </div>
+
+        <p class="register">Don't have an account? <a href="signup.html">Sign Up here</a></p>
+    </div>
+
+</body>
+</html>
