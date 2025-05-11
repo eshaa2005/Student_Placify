@@ -1,7 +1,7 @@
 <?php
 $host = "127.0.0.1";  // MySQL Workbench runs locally
 $username = "root";   // Default MySQL user
-$password = "1234";     
+$password = "//pass";     
 $database = "student_records"; 
 
 $conn = new mysqli($host, $username, $password, $database);
